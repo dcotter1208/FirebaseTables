@@ -14,6 +14,7 @@
 		434651221CFF1F19006D2574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 434651211CFF1F19006D2574 /* Assets.xcassets */; };
 		434651251CFF1F19006D2574 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434651231CFF1F19006D2574 /* LaunchScreen.storyboard */; };
 		4346512D1CFF1F32006D2574 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4346512C1CFF1F32006D2574 /* .gitignore */; };
+		698CCF9126CA23F2E01B6119 /* libPods-FirebaseTables.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEF9BD01F195CF3458D39B3 /* libPods-FirebaseTables.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,9 @@
 		434651241CFF1F19006D2574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		434651261CFF1F19006D2574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4346512C1CFF1F32006D2574 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		57E4EE1BD76AFDC4DEF64BB3 /* Pods-FirebaseTables.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseTables.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseTables/Pods-FirebaseTables.release.xcconfig"; sourceTree = "<group>"; };
+		6BEF9BD01F195CF3458D39B3 /* libPods-FirebaseTables.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FirebaseTables.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2F366FB572528EACA23B3FF /* Pods-FirebaseTables.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseTables.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseTables/Pods-FirebaseTables.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				698CCF9126CA23F2E01B6119 /* libPods-FirebaseTables.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25804BA325F6F90E637ECCD8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D2F366FB572528EACA23B3FF /* Pods-FirebaseTables.debug.xcconfig */,
+				57E4EE1BD76AFDC4DEF64BB3 /* Pods-FirebaseTables.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		434651091CFF1F19006D2574 = {
 			isa = PBXGroup;
 			children = (
 				434651141CFF1F19006D2574 /* FirebaseTables */,
 				434651131CFF1F19006D2574 /* Products */,
+				25804BA325F6F90E637ECCD8 /* Pods */,
+				B1AA166570346FA8271382C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +98,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B1AA166570346FA8271382C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6BEF9BD01F195CF3458D39B3 /* libPods-FirebaseTables.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,9 +113,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 434651291CFF1F19006D2574 /* Build configuration list for PBXNativeTarget "FirebaseTables" */;
 			buildPhases = (
+				ADEBB54113ECA3517E049F7C /* 📦 Check Pods Manifest.lock */,
 				4346510E1CFF1F19006D2574 /* Sources */,
 				4346510F1CFF1F19006D2574 /* Frameworks */,
 				434651101CFF1F19006D2574 /* Resources */,
+				8116534BE20D7E7525016168 /* 📦 Embed Pods Frameworks */,
+				270A2A2BDC535ACBBF7B691F /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -147,6 +174,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		270A2A2BDC535ACBBF7B691F /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FirebaseTables/Pods-FirebaseTables-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8116534BE20D7E7525016168 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FirebaseTables/Pods-FirebaseTables-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADEBB54113ECA3517E049F7C /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4346510E1CFF1F19006D2574 /* Sources */ = {
@@ -265,6 +340,7 @@
 		};
 		4346512A1CFF1F19006D2574 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2F366FB572528EACA23B3FF /* Pods-FirebaseTables.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FirebaseTables/Info.plist;
@@ -276,6 +352,7 @@
 		};
 		4346512B1CFF1F19006D2574 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57E4EE1BD76AFDC4DEF64BB3 /* Pods-FirebaseTables.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FirebaseTables/Info.plist;
@@ -304,6 +381,7 @@
 				4346512B1CFF1F19006D2574 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
