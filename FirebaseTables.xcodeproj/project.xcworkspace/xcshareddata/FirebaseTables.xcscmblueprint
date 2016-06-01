@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F93D5D38588A4D29E250D9497BC93F38D3610B3B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F93D5D38588A4D29E250D9497BC93F38D3610B3B" : 0,
+    "D9D0CCF4566E82CC7C13C89E9BA659C99FE126D2" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BF9A810D-0D4B-468D-9A1F-39606ABDDFC2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F93D5D38588A4D29E250D9497BC93F38D3610B3B" : "FirebaseTables\/",
+    "D9D0CCF4566E82CC7C13C89E9BA659C99FE126D2" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "FirebaseTables",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "FirebaseTables.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:dcotter1208\/LightningRealm.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D9D0CCF4566E82CC7C13C89E9BA659C99FE126D2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:dcotter1208\/FirebaseTables.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F93D5D38588A4D29E250D9497BC93F38D3610B3B"
+    }
+  ]
+}
