@@ -9,8 +9,10 @@
 #import "ViewController.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *restaurantTableView;
 
 @end
+
 
 NSMutableArray *restaurantData;
 @implementation ViewController
@@ -20,6 +22,7 @@ Firebase *firebaseMainRef;
     [super viewDidLoad];
 
     [self retrieveRestaurantsFromFirebase];
+    restaurantData = [[NSMutableArray alloc]init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,11 +32,14 @@ Firebase *firebaseMainRef;
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return restaurantData.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    Restaurant *restaurant = [restaurantData objectAtIndex:indexPath.row];
+    cell.textLabel.text = restaurant.name;
+
     return cell;
 }
 
@@ -50,9 +56,14 @@ Firebase *firebaseMainRef;
         NSString *address = snapshot.value[@"address"];
 
         Restaurant *restaurant = [[Restaurant alloc]initWithRestaurantName:name address:address];
-        restaurantData = [[NSMutableArray alloc]init];
         [restaurantData addObject:restaurant];
+        
+        NSLog(@"Count: %lu", (unsigned long)restaurantData.count);
+        for(Restaurant *r in restaurantData) {
+            NSLog(@"the restaurant are: %@", r.name);
+        }
 
+        [_restaurantTableView reloadData];
     }];
 }
 
