@@ -14,6 +14,7 @@
 		434651221CFF1F19006D2574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 434651211CFF1F19006D2574 /* Assets.xcassets */; };
 		434651251CFF1F19006D2574 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434651231CFF1F19006D2574 /* LaunchScreen.storyboard */; };
 		4346512D1CFF1F32006D2574 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4346512C1CFF1F32006D2574 /* .gitignore */; };
+		434651331CFF37DB006D2574 /* AddEditRestaurantVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 434651321CFF37DB006D2574 /* AddEditRestaurantVC.m */; };
 		698CCF9126CA23F2E01B6119 /* libPods-FirebaseTables.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEF9BD01F195CF3458D39B3 /* libPods-FirebaseTables.a */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,8 @@
 		434651241CFF1F19006D2574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		434651261CFF1F19006D2574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4346512C1CFF1F32006D2574 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		434651311CFF37DB006D2574 /* AddEditRestaurantVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEditRestaurantVC.h; sourceTree = "<group>"; };
+		434651321CFF37DB006D2574 /* AddEditRestaurantVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEditRestaurantVC.m; sourceTree = "<group>"; };
 		57E4EE1BD76AFDC4DEF64BB3 /* Pods-FirebaseTables.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseTables.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseTables/Pods-FirebaseTables.release.xcconfig"; sourceTree = "<group>"; };
 		6BEF9BD01F195CF3458D39B3 /* libPods-FirebaseTables.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FirebaseTables.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F366FB572528EACA23B3FF /* Pods-FirebaseTables.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseTables.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseTables/Pods-FirebaseTables.debug.xcconfig"; sourceTree = "<group>"; };
@@ -80,6 +83,8 @@
 				434651191CFF1F19006D2574 /* AppDelegate.m */,
 				4346511B1CFF1F19006D2574 /* ViewController.h */,
 				4346511C1CFF1F19006D2574 /* ViewController.m */,
+				434651311CFF37DB006D2574 /* AddEditRestaurantVC.h */,
+				434651321CFF37DB006D2574 /* AddEditRestaurantVC.m */,
 				4346511E1CFF1F19006D2574 /* Main.storyboard */,
 				434651211CFF1F19006D2574 /* Assets.xcassets */,
 				434651231CFF1F19006D2574 /* LaunchScreen.storyboard */,
@@ -229,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4346511D1CFF1F19006D2574 /* ViewController.m in Sources */,
+				434651331CFF37DB006D2574 /* AddEditRestaurantVC.m in Sources */,
 				4346511A1CFF1F19006D2574 /* AppDelegate.m in Sources */,
 				434651171CFF1F19006D2574 /* main.m in Sources */,
 			);

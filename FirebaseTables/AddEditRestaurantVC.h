@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  AddEditRestaurantVC.h
 //  FirebaseTables
 //
 //  Created by DetroitLabs on 6/1/16.
@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <Firebase/Firebase.h>
 
-@interface ViewController : UIViewController
-
+@interface AddEditRestaurantVC : UIViewController
 
 @end
-
