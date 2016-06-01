@@ -13,11 +13,12 @@
 @end
 
 @implementation ViewController
-//Firebase *firebaseRef;
+Firebase *firebaseMainRef;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    firebaseRef = [[Firebase alloc]initWithUrl:@"https://fbtables.firebaseio.com"];
+    firebaseMainRef = [[Firebase alloc]initWithUrl:@"https://fbtables.firebaseio.com/restaurants"];
 //    [self testingFirebase];
     
     // Do any additional setup after loading the view, typically from a nib.

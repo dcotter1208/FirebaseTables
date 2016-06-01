@@ -21,8 +21,6 @@ Firebase *firebaseRef;
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    firebaseRef = [[Firebase alloc]initWithUrl:@"https://fbtables.firebaseio.com"];
-
     
 }
 
@@ -43,9 +41,13 @@ Firebase *firebaseRef;
     
     Restaurant *newRestaurant = [[Restaurant alloc]initWithRestaurantName:restaurantName address:resturantAddress];
     
-    Firebase *restaurantRef = [firebaseRef childByAppendingPath:@"restaurants"];
+    FirebaseRef *FBRef = [[FirebaseRef alloc]initWithURL];
+    Firebase *restaurantRef = [FBRef firebaseRefForPath:@"/restaurants"];
+    Firebase *addRestaurantAsChildRef = [restaurantRef childByAutoId];
+    
+//    Firebase *restaurantRef = [firebaseRef childByAppendingPath:@"restaurants"];
     NSDictionary *restaurant = @{@"name": newRestaurant.name, @"address": newRestaurant.address};
-    [restaurantRef setValue:restaurant];
+    [addRestaurantAsChildRef setValue:restaurant];
 }
 
 
