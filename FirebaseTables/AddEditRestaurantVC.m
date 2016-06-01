@@ -8,6 +8,7 @@
 
 #import "AddEditRestaurantVC.h"
 
+
 @interface AddEditRestaurantVC ()
 @property (weak, nonatomic) IBOutlet UITextField *restaurantNameTF;
 @property (weak, nonatomic) IBOutlet UITextField *restaurantAddressTF;
@@ -31,8 +32,20 @@ Firebase *firebaseRef;
 }
 
 - (IBAction)saveRestaurantButtonPressed:(id)sender {
+    [self addNewRestaurant];
     
+}
+
+
+- (void)addNewRestaurant {
+    NSString *restaurantName = _restaurantNameTF.text;
+    NSString *resturantAddress = _restaurantAddressTF.text;
     
+    Restaurant *newRestaurant = [[Restaurant alloc]initWithRestaurantName:restaurantName address:resturantAddress];
+    
+    Firebase *restaurantRef = [firebaseRef childByAppendingPath:@"restaurants"];
+    NSDictionary *restaurant = @{@"name": newRestaurant.name, @"address": newRestaurant.address};
+    [restaurantRef setValue:restaurant];
 }
 
 
