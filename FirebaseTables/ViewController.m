@@ -13,12 +13,13 @@
 @end
 
 @implementation ViewController
-Firebase *firebaseRef;
+Firebase *firebaseMainRef;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    firebaseRef = [[Firebase alloc]initWithUrl:@"https://fbtables.firebaseio.com"];
-    [self testingFirebase];
+    firebaseMainRef = [[Firebase alloc]initWithUrl:@"https://fbtables.firebaseio.com/restaurants"];
+//    [self testingFirebase];
     
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -39,17 +40,17 @@ Firebase *firebaseRef;
 }
 
 
--(void)testingFirebase {
-    NSDictionary *donovan = @{@"name": @"donovan", @"age": @"28"};
-    NSDictionary *michael = @{@"name": @"michael", @"age": @"29"};
-    
-    Firebase *userRef = [firebaseRef childByAppendingPath:@"users"];
- 
-    NSDictionary *users = @{@"user1": donovan, @"user2": michael};
-    
-    [userRef setValue:users];
-    
-}
+//-(void)testingFirebase {
+//    NSDictionary *donovan = @{@"name": @"donovan", @"age": @"28"};
+//    NSDictionary *michael = @{@"name": @"michael", @"age": @"29"};
+//    
+//    Firebase *userRef = [firebaseRef childByAppendingPath:@"users"];
+// 
+//    NSDictionary *users = @{@"user1": donovan, @"user2": michael};
+//    
+//    [userRef setValue:users];
+//    
+//}
 
 
 @end
