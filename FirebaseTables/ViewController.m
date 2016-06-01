@@ -12,15 +12,14 @@
 
 @end
 
+NSMutableArray *restaurantData;
 @implementation ViewController
-Firebase *firebaseRef;
+Firebase *firebaseMainRef;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    firebaseRef = [[Firebase alloc]initWithUrl:@"https://fbtables.firebaseio.com"];
-    [self testingFirebase];
-    
-    // Do any additional setup after loading the view, typically from a nib.
+
+    [self retrieveRestaurantsFromFirebase];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,16 +38,22 @@ Firebase *firebaseRef;
 }
 
 
--(void)testingFirebase {
-    NSDictionary *donovan = @{@"name": @"donovan", @"age": @"28"};
-    NSDictionary *michael = @{@"name": @"michael", @"age": @"29"};
+-(void)retrieveRestaurantsFromFirebase {
+    // Get a reference to our posts
+    FirebaseRef *mainRef = [[FirebaseRef alloc]initWithURL];
+    Firebase *restaurantRef = [mainRef firebaseRefForPath:@"/restaurants"];
     
-    Firebase *userRef = [firebaseRef childByAppendingPath:@"users"];
- 
-    NSDictionary *users = @{@"user1": donovan, @"user2": michael};
-    
-    [userRef setValue:users];
-    
+    // Retrieve new posts as they are added to the database
+    [restaurantRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+        
+        NSString *name = snapshot.value[@"name"];
+        NSString *address = snapshot.value[@"address"];
+
+        Restaurant *restaurant = [[Restaurant alloc]initWithRestaurantName:name address:address];
+        restaurantData = [[NSMutableArray alloc]init];
+        [restaurantData addObject:restaurant];
+
+    }];
 }
 
 

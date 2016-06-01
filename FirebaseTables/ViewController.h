@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <Firebase/Firebase.h>
+#import "FirebaseRef.h"
+#import "Restaurant.h"
+
 
 @interface ViewController : UIViewController
 

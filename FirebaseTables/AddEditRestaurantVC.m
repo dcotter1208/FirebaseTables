@@ -8,6 +8,7 @@
 
 #import "AddEditRestaurantVC.h"
 
+
 @interface AddEditRestaurantVC ()
 @property (weak, nonatomic) IBOutlet UITextField *restaurantNameTF;
 @property (weak, nonatomic) IBOutlet UITextField *restaurantAddressTF;
@@ -20,8 +21,6 @@ Firebase *firebaseRef;
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    firebaseRef = [[Firebase alloc]initWithUrl:@"https://fbtables.firebaseio.com"];
-
     
 }
 
@@ -31,8 +30,24 @@ Firebase *firebaseRef;
 }
 
 - (IBAction)saveRestaurantButtonPressed:(id)sender {
+    [self addNewRestaurant];
     
+}
+
+
+- (void)addNewRestaurant {
+    NSString *restaurantName = _restaurantNameTF.text;
+    NSString *resturantAddress = _restaurantAddressTF.text;
     
+    Restaurant *newRestaurant = [[Restaurant alloc]initWithRestaurantName:restaurantName address:resturantAddress];
+    
+    FirebaseRef *FBRef = [[FirebaseRef alloc]initWithURL];
+    Firebase *restaurantRef = [FBRef firebaseRefForPath:@"/restaurants"];
+    Firebase *addRestaurantAsChildRef = [restaurantRef childByAutoId];
+    
+//    Firebase *restaurantRef = [firebaseRef childByAppendingPath:@"restaurants"];
+    NSDictionary *restaurant = @{@"name": newRestaurant.name, @"address": newRestaurant.address};
+    [addRestaurantAsChildRef setValue:restaurant];
 }
 
 
