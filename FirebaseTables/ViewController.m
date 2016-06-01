@@ -9,8 +9,9 @@
 #import "ViewController.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
-
+@property (weak, nonatomic) IBOutlet UITableView *restaurantTableView;
 @end
+
 
 NSMutableArray *restaurantData;
 @implementation ViewController
@@ -18,8 +19,8 @@ Firebase *firebaseMainRef;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     [self retrieveRestaurantsFromFirebase];
+    restaurantData = [[NSMutableArray alloc]init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,30 +30,34 @@ Firebase *firebaseMainRef;
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return restaurantData.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    Restaurant *restaurant = [restaurantData objectAtIndex:indexPath.row];
+    cell.textLabel.text = restaurant.name;
+
     return cell;
 }
 
 
 -(void)retrieveRestaurantsFromFirebase {
-    // Get a reference to our posts
+    // Get a reference to our restaurants
     FirebaseRef *mainRef = [[FirebaseRef alloc]initWithURL];
     Firebase *restaurantRef = [mainRef firebaseRefForPath:@"/restaurants"];
     
-    // Retrieve new posts as they are added to the database
+    // Retrieve new restaurants as they are added to the database
     [restaurantRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
         
         NSString *name = snapshot.value[@"name"];
         NSString *address = snapshot.value[@"address"];
 
         Restaurant *restaurant = [[Restaurant alloc]initWithRestaurantName:name address:address];
-        restaurantData = [[NSMutableArray alloc]init];
         [restaurantData addObject:restaurant];
-
+        
+        [_restaurantTableView reloadData];
     }];
 }
 
